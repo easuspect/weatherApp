@@ -299,7 +299,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NuY-tN-HBF">
                                 <rect key="frame" x="40" y="124" width="274" height="60"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TuD-Gd-23b">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifying-glass" translatesAutoresizingMaskIntoConstraints="NO" id="TuD-Gd-23b">
                                         <rect key="frame" x="16" y="15" width="30" height="30"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="8b0-FP-5DR"/>
@@ -341,6 +341,16 @@
                                 <rect key="frame" x="0.0" y="184" width="414" height="678"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="oV5-zk-aZS">
+                                <rect key="frame" x="88" y="46" width="252" height="32"/>
+                                <segments>
+                                    <segment title="Listing"/>
+                                    <segment title="Map"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedPressedButton:" destination="pEo-hZ-2TP" eventType="valueChanged" id="5Rj-TH-DOb"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="2s9-fw-wgh"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -356,10 +366,13 @@
                             <constraint firstItem="oOS-6R-TxJ" firstAttribute="top" secondItem="tbG-36-975" secondAttribute="top" constant="50" id="UL1-RR-H6U"/>
                             <constraint firstItem="2s9-fw-wgh" firstAttribute="trailing" secondItem="6l3-lF-Wid" secondAttribute="trailing" id="WPu-IE-M6q"/>
                             <constraint firstItem="XqT-B1-1c5" firstAttribute="leading" secondItem="NuY-tN-HBF" secondAttribute="trailing" constant="8" id="WWt-33-BJT"/>
+                            <constraint firstItem="2s9-fw-wgh" firstAttribute="trailing" secondItem="oV5-zk-aZS" secondAttribute="trailing" constant="74" id="X4E-kd-ViC"/>
                             <constraint firstItem="2s9-fw-wgh" firstAttribute="bottom" secondItem="NzR-nq-fRr" secondAttribute="bottom" id="Xcv-w5-hVf"/>
+                            <constraint firstItem="oV5-zk-aZS" firstAttribute="top" secondItem="2s9-fw-wgh" secondAttribute="top" constant="2" id="bZC-St-NwC"/>
                             <constraint firstItem="XqT-B1-1c5" firstAttribute="trailing" secondItem="2s9-fw-wgh" secondAttribute="trailing" constant="-8" id="dxN-G0-8Gi"/>
                             <constraint firstItem="NzR-nq-fRr" firstAttribute="top" secondItem="NuY-tN-HBF" secondAttribute="bottom" id="fPS-cQ-K3y"/>
                             <constraint firstItem="XqT-B1-1c5" firstAttribute="centerY" secondItem="NuY-tN-HBF" secondAttribute="centerY" id="jBQ-Z8-q0T"/>
+                            <constraint firstItem="oV5-zk-aZS" firstAttribute="leading" secondItem="oOS-6R-TxJ" secondAttribute="trailing" constant="24" id="pC0-0B-Nf9"/>
                             <constraint firstItem="oOS-6R-TxJ" firstAttribute="leading" secondItem="tbG-36-975" secondAttribute="leading" constant="40" id="zbZ-2b-tPg"/>
                         </constraints>
                     </view>
@@ -368,6 +381,7 @@
                         <outlet property="containerView" destination="NuY-tN-HBF" id="icU-JI-r2l"/>
                         <outlet property="findCityTextField" destination="dFn-WK-QQY" id="JFT-Ab-fDp"/>
                         <outlet property="searchImageView" destination="TuD-Gd-23b" id="fd9-Ur-4jy"/>
+                        <outlet property="segmentedLabel" destination="oV5-zk-aZS" id="qIu-di-94H"/>
                         <outlet property="tableView" destination="NzR-nq-fRr" id="RJY-rk-jmV"/>
                     </connections>
                 </viewController>
@@ -398,6 +412,7 @@
         <image name="iconAdd" width="31" height="31"/>
         <image name="iconBack" width="31" height="31"/>
         <image name="iconRefresh" width="31" height="31"/>
+        <image name="magnifying-glass" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
