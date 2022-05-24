@@ -10,6 +10,7 @@ import UIKit
 class ViewController: UIViewController {
 
     //MARK: -Outlets
+    
     @IBOutlet weak var loadingContainerView: UIView!
     
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
@@ -43,6 +44,7 @@ class ViewController: UIViewController {
         
         setupUI()
         fetchData()
+       
         
         LocationHelper.getAddressFromLatLon(pdblLatitude: "30.4872", withLongitude: "-97.7233") { [weak self] address in
             self?.weatherCityLabel.text = address
@@ -60,6 +62,9 @@ class ViewController: UIViewController {
     }
     
     @IBAction func addNewPlace(_ sender: Any) {
+        if let vc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "AddLocationViewController") as? AddLocationViewController {
+            navigationController?.pushViewController(vc, animated: true)
+        }
     }
     
     @IBAction func refreshButton(_ sender: Any) {
@@ -70,6 +75,7 @@ class ViewController: UIViewController {
         
     }
 }
+
 
 private extension ViewController {
     
