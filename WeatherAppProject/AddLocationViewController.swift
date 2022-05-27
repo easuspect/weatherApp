@@ -10,6 +10,7 @@ import UIKit
 class AddLocationViewController: UIViewController {
     
     var dataSource: SavedCityTableViewDataSource!
+    var localSearchHelper = LocalSearchHelper()
     
     @IBOutlet weak var segmentedLabel: UISegmentedControl!
 
@@ -24,6 +25,8 @@ class AddLocationViewController: UIViewController {
         super.viewDidLoad()
      
         dataSource = .init(tableView: tableView, vc: self)
+        localSearchHelper.completion = didSearchResultsFetch(results:)
+    
         findCityTextField.delegate = self
    
         containerView.backgroundColor = .clear
@@ -34,6 +37,22 @@ class AddLocationViewController: UIViewController {
         
         setPlaceHolderUI()
         segmentedLabel.isHidden = true
+        
+        //DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5)) {
+            self.localSearchHelper.setSearchText("Turkey")
+        //}
+    }
+    
+    private func didSearchResultsFetch(results: [String]) {
+        dataSource.setItems(
+            results.map{
+                .init(
+                    weatherStatusText: nil,
+                    cityNameText: $0,
+                    degree: nil
+                )
+            }
+        )
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

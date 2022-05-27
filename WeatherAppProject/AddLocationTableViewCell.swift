@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SavedCityTableViewCell: UITableViewCell {
+class AddLocationTableViewCell: UITableViewCell {
     
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var savedWeatherConditionLabel: UILabel!
@@ -19,5 +19,4 @@ class SavedCityTableViewCell: UITableViewCell {
         
         
     }
-
 }

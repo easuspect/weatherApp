@@ -18,10 +18,12 @@
 		D70A7BFC27FFF40F0014D0DC /* collectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70A7BFB27FFF40F0014D0DC /* collectionViewDataSource.swift */; };
 		D70A7BFF27FFFD750014D0DC /* TimeZoneCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70A7BFD27FFFD750014D0DC /* TimeZoneCell.swift */; };
 		D70A7C0027FFFD750014D0DC /* TimeZoneCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D70A7BFE27FFFD750014D0DC /* TimeZoneCell.xib */; };
+		D74720532841408A00565B3A /* LocalSearchHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74720522841408A00565B3A /* LocalSearchHelper.swift */; };
+		D7472055284149B700565B3A /* AddLocationTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7472054284149B700565B3A /* AddLocationTableViewCellViewModel.swift */; };
 		D7578F57282577450049ED3F /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7578F56282577450049ED3F /* LocationHelper.swift */; };
 		D7578F5D283763430049ED3F /* AddLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7578F5C283763430049ED3F /* AddLocationViewController.swift */; };
-		D7578F60283945F20049ED3F /* SavedCityTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7578F5E283945F20049ED3F /* SavedCityTableViewCell.swift */; };
-		D7578F61283945F20049ED3F /* SavedCityTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7578F5F283945F20049ED3F /* SavedCityTableViewCell.xib */; };
+		D7578F60283945F20049ED3F /* AddLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7578F5E283945F20049ED3F /* AddLocationTableViewCell.swift */; };
+		D7578F61283945F20049ED3F /* AddLocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7578F5F283945F20049ED3F /* AddLocationTableViewCell.xib */; };
 		D762C5022802060800BB1FF4 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D762C5012802060700BB1FF4 /* Color.xcassets */; };
 		D762C504280206DE00BB1FF4 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D762C503280206DE00BB1FF4 /* UIColor+Extension.swift */; };
 		D762C509280DEA9800BB1FF4 /* TimeZoneViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D762C508280DEA9800BB1FF4 /* TimeZoneViewModel.swift */; };
@@ -49,10 +51,12 @@
 		D70A7BFB27FFF40F0014D0DC /* collectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = collectionViewDataSource.swift; sourceTree = "<group>"; };
 		D70A7BFD27FFFD750014D0DC /* TimeZoneCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZoneCell.swift; sourceTree = "<group>"; };
 		D70A7BFE27FFFD750014D0DC /* TimeZoneCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeZoneCell.xib; sourceTree = "<group>"; };
+		D74720522841408A00565B3A /* LocalSearchHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalSearchHelper.swift; sourceTree = "<group>"; };
+		D7472054284149B700565B3A /* AddLocationTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		D7578F56282577450049ED3F /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
 		D7578F5C283763430049ED3F /* AddLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationViewController.swift; sourceTree = "<group>"; };
-		D7578F5E283945F20049ED3F /* SavedCityTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedCityTableViewCell.swift; sourceTree = "<group>"; };
-		D7578F5F283945F20049ED3F /* SavedCityTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SavedCityTableViewCell.xib; sourceTree = "<group>"; };
+		D7578F5E283945F20049ED3F /* AddLocationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLocationTableViewCell.swift; sourceTree = "<group>"; };
+		D7578F5F283945F20049ED3F /* AddLocationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddLocationTableViewCell.xib; sourceTree = "<group>"; };
 		D762C5012802060700BB1FF4 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		D762C503280206DE00BB1FF4 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		D762C508280DEA9800BB1FF4 /* TimeZoneViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeZoneViewModel.swift; sourceTree = "<group>"; };
@@ -107,8 +111,9 @@
 				D762C50F2819C77000BB1FF4 /* OtherDaysTableViewCell.xib */,
 				D70A7BFD27FFFD750014D0DC /* TimeZoneCell.swift */,
 				D70A7BFE27FFFD750014D0DC /* TimeZoneCell.xib */,
-				D7578F5E283945F20049ED3F /* SavedCityTableViewCell.swift */,
-				D7578F5F283945F20049ED3F /* SavedCityTableViewCell.xib */,
+				D7578F5E283945F20049ED3F /* AddLocationTableViewCell.swift */,
+				D7472054284149B700565B3A /* AddLocationTableViewCellViewModel.swift */,
+				D7578F5F283945F20049ED3F /* AddLocationTableViewCell.xib */,
 				D70A7BF327FF7A5D0014D0DC /* Extension */,
 				D70A7BE227FF638A0014D0DC /* Main.storyboard */,
 				D70A7BE827FF638E0014D0DC /* Assets.xcassets */,
@@ -144,6 +149,7 @@
 			children = (
 				D762C50A280DED1B00BB1FF4 /* DateHelper.swift */,
 				D7578F56282577450049ED3F /* LocationHelper.swift */,
+				D74720522841408A00565B3A /* LocalSearchHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -222,7 +228,7 @@
 				D762C5022802060800BB1FF4 /* Color.xcassets in Resources */,
 				D70A7BE927FF638E0014D0DC /* Assets.xcassets in Resources */,
 				D70A7BE427FF638A0014D0DC /* Main.storyboard in Resources */,
-				D7578F61283945F20049ED3F /* SavedCityTableViewCell.xib in Resources */,
+				D7578F61283945F20049ED3F /* AddLocationTableViewCell.xib in Resources */,
 				D762C5112819C77000BB1FF4 /* OtherDaysTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,11 +251,13 @@
 				D7578F57282577450049ED3F /* LocationHelper.swift in Sources */,
 				D762C50B280DED1B00BB1FF4 /* DateHelper.swift in Sources */,
 				D762C5132819CC6900BB1FF4 /* OtherDaysInfoModel.swift in Sources */,
+				D74720532841408A00565B3A /* LocalSearchHelper.swift in Sources */,
 				D70A7BE727FF638A0014D0DC /* WeatherAppProject.xcdatamodeld in Sources */,
 				D7C413722839514700370752 /* SavedCityTableViewDataSource.swift in Sources */,
 				D762C5152821B35700BB1FF4 /* WeatherForecastEntity.swift in Sources */,
 				D70A7BFF27FFFD750014D0DC /* TimeZoneCell.swift in Sources */,
-				D7578F60283945F20049ED3F /* SavedCityTableViewCell.swift in Sources */,
+				D7578F60283945F20049ED3F /* AddLocationTableViewCell.swift in Sources */,
+				D7472055284149B700565B3A /* AddLocationTableViewCellViewModel.swift in Sources */,
 				D7578F5D283763430049ED3F /* AddLocationViewController.swift in Sources */,
 				D70A7BDF27FF638A0014D0DC /* SceneDelegate.swift in Sources */,
 				D762C504280206DE00BB1FF4 /* UIColor+Extension.swift in Sources */,

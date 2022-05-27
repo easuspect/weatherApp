@@ -9,49 +9,58 @@ import Foundation
 import UIKit
 
 class SavedCityTableViewDataSource: NSObject {
-
+    
     private weak var tableView: UITableView!
     private weak var viewController: UIViewController!
     
-    let savedCityTableViewCell = "SavedCityTableViewCell"
-
-    init(tableView: UITableView, vc: UIViewController) {
+    private var items = [AddLocationTableViewCellViewModel]()
     
+    private let addLocationTableViewCell = "AddLocationTableViewCell"
+    
+    init(tableView: UITableView, vc: UIViewController) {
+        
         super.init()
         self.tableView = tableView
         self.viewController = vc
-    
+        
         tableView.dataSource = self
         tableView.delegate = self
         
         registerCell()
-
-        }
-    }
-
-    extension SavedCityTableViewDataSource {
-        func registerCell() {
-        tableView.register(.init(nibName: "SavedCityTableViewCell", bundle: nil), forCellReuseIdentifier: savedCityTableViewCell)
-        }
-    }
-
-    extension SavedCityTableViewDataSource: UITableViewDelegate {
-    
         
     }
-
-    extension SavedCityTableViewDataSource: UITableViewDataSource {
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return 3
-        }
-   
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: savedCityTableViewCell) as! SavedCityTableViewCell
-            cell.savedCityDegree.text = "sjdckdcnskldjc"
-            cell.savedCityLabel.text = "SDLCKNSDCKLN"
-            cell.savedWeatherConditionLabel.text = "ldcjnldcn"
-            return cell
-        }
+    
+    func setItems(_ items: [AddLocationTableViewCellViewModel]) {
+        self.items = items
+        tableView?.reloadData()
     }
+}
+
+
+
+extension SavedCityTableViewDataSource {
+    func registerCell() {
+        tableView.register(.init(nibName: "AddLocationTableViewCell", bundle: nil), forCellReuseIdentifier: addLocationTableViewCell)
+    }
+}
+
+extension SavedCityTableViewDataSource: UITableViewDelegate {
+    
+}
+
+extension SavedCityTableViewDataSource: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return items.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: addLocationTableViewCell) as! AddLocationTableViewCell
+        let rowItem = items[indexPath.row]
+        cell.savedCityDegree.text = rowItem.degree
+        cell.savedCityLabel.text = rowItem.cityNameText
+        cell.savedWeatherConditionLabel.text = rowItem.weatherStatusText
+        return cell
+    }
+}
 
 
