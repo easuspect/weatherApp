@@ -28,6 +28,13 @@ class AddLocationViewController: UIViewController {
         localSearchHelper.completion = didSearchResultsFetch(results:)
     
         findCityTextField.delegate = self
+        findCityTextField.returnKeyType = .search
+        findCityTextField.addTarget(
+            self,
+            action: #selector(textFieldDidChange(_:)),
+            for: .editingChanged
+        )
+
    
         containerView.backgroundColor = .clear
         containerView.layer.borderWidth = 1
@@ -37,10 +44,6 @@ class AddLocationViewController: UIViewController {
         
         setPlaceHolderUI()
         segmentedLabel.isHidden = true
-        
-        //DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(5)) {
-            self.localSearchHelper.setSearchText("Turkey")
-        //}
     }
     
     private func didSearchResultsFetch(results: [String]) {
@@ -73,7 +76,7 @@ class AddLocationViewController: UIViewController {
         } else {
             print("Map")
         }
-    }   
+    }
 }
 
 extension AddLocationViewController {
@@ -96,4 +99,21 @@ extension AddLocationViewController: UITextFieldDelegate {
         print("End")
     }
 }
+
+extension AddLocationViewController {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {   //delegate method
+       textField.resignFirstResponder()
+       localSearchHelper.setSearchText(textField.text ?? "")
+       return true
+    }
+}
+
+extension AddLocationViewController {
+    
+    @objc func textFieldDidChange(_ textField: UITextField) {
+        localSearchHelper.setSearchText(textField.text ?? "")
+    }
+}
+
 

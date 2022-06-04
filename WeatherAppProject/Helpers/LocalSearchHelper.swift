@@ -29,6 +29,7 @@ class LocalSearchHelper: NSObject {
 extension LocalSearchHelper: MKLocalSearchCompleterDelegate {
     
     func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
+        print("xxxx \(completer.results)")
         completion?(completer.results.map{$0.title})
     }
 }
