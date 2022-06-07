@@ -37,11 +37,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="accept" translatesAutoresizingMaskIntoConstraints="NO" id="Zvu-Ua-cju">
+                                <rect key="frame" x="460" y="48.5" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="aMq-pP-aUL"/>
+                                    <constraint firstAttribute="height" constant="40" id="r8l-mw-q5o"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="JKf-QF-IbU" firstAttribute="leading" secondItem="hFk-W0-i0d" secondAttribute="leading" constant="20" id="8vN-fh-fgx"/>
                             <constraint firstItem="JKf-QF-IbU" firstAttribute="top" secondItem="hFk-W0-i0d" secondAttribute="top" constant="30" id="FRb-Xb-LId"/>
+                            <constraint firstAttribute="trailing" secondItem="Zvu-Ua-cju" secondAttribute="trailing" constant="16" id="HeA-d1-5VC"/>
+                            <constraint firstItem="Zvu-Ua-cju" firstAttribute="centerY" secondItem="hFk-W0-i0d" secondAttribute="centerY" id="KQq-7T-GgA"/>
                             <constraint firstItem="Fjy-22-rLS" firstAttribute="leading" secondItem="anD-EO-zp7" secondAttribute="trailing" constant="8" id="LpF-P3-K6I"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="anD-EO-zp7" secondAttribute="bottom" constant="16" id="Yta-57-Tt0"/>
                             <constraint firstAttribute="trailing" secondItem="Fjy-22-rLS" secondAttribute="trailing" constant="20" id="hb3-Vu-hFG"/>
@@ -70,4 +79,7 @@
             <point key="canvasLocation" x="192.75362318840581" y="66.629464285714278"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="accept" width="512" height="512"/>
+    </resources>
 </document>

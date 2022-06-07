@@ -47,15 +47,18 @@ class AddLocationViewController: UIViewController {
     }
     
     private func didSearchResultsFetch(results: [String]) {
-        dataSource.setItems(
-            results.map{
-                .init(
-                    weatherStatusText: nil,
-                    cityNameText: $0,
-                    degree: nil
-                )
-            }
-        )
+        
+        print("\(results)")
+//        dataSource.setItems(
+//            results.map{
+//                .init(
+//                    weatherStatusText: nil,
+//                    cityNameText: $0,
+//                    degree: nil
+//                )
+//            },
+//            isSearchActive: true
+//        )
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -11,4 +11,5 @@ struct AddLocationTableViewCellViewModel {
     var weatherStatusText: String?
     var cityNameText: String?
     var degree: String?
+    var isSelected: Bool = false
 }

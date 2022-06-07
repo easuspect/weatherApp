@@ -17,6 +17,8 @@ class SavedCityTableViewDataSource: NSObject {
     
     private let addLocationTableViewCell = "AddLocationTableViewCell"
     
+    private var isSearchActive: Bool = false
+    
     init(tableView: UITableView, vc: UIViewController) {
         
         super.init()
@@ -29,14 +31,13 @@ class SavedCityTableViewDataSource: NSObject {
         registerCell()
         
     }
-    
-    func setItems(_ items: [AddLocationTableViewCellViewModel]) {
+  
+    func setItems(_ items: [AddLocationTableViewCellViewModel], isSearchActive: Bool = false) {
+        //self.isSearchActive = isSearchActive
         self.items = items
         tableView?.reloadData()
     }
 }
-
-
 
 extension SavedCityTableViewDataSource {
     func registerCell() {
