@@ -25,7 +25,7 @@ class AddLocationViewController: UIViewController {
         super.viewDidLoad()
      
         dataSource = .init(tableView: tableView, vc: self)
-        localSearchHelper.completion = didSearchResultsFetch(results:)
+        localSearchHelper.completion = xxx(results:)
     
         findCityTextField.delegate = self
         findCityTextField.returnKeyType = .search
@@ -46,7 +46,7 @@ class AddLocationViewController: UIViewController {
         segmentedLabel.isHidden = true
     }
     
-    private func didSearchResultsFetch(results: [String]) {
+    private func xxx(results: [String]) {
         
         print("\(results)")
 //        dataSource.setItems(
