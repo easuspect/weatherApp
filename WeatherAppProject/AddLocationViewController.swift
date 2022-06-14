@@ -49,16 +49,16 @@ class AddLocationViewController: UIViewController {
     private func xxx(results: [String]) {
         
         print("\(results)")
-//        dataSource.setItems(
-//            results.map{
-//                .init(
-//                    weatherStatusText: nil,
-//                    cityNameText: $0,
-//                    degree: nil
-//                )
-//            },
-//            isSearchActive: true
-//        )
+        dataSource.setItems(
+            results.map{
+                .init(
+                    weatherStatusText: nil,
+                    cityNameText: $0,
+                    degree: nil
+                )
+            },
+            isSearchActive: true
+        )
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

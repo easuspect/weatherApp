@@ -47,6 +47,14 @@ extension SavedCityTableViewDataSource {
 
 extension SavedCityTableViewDataSource: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let indexPath = tableView.indexPathForSelectedRow //optional, to get from any UIButton for example
+
+        let currentCell = tableView.cellForRow(at: indexPath!)! as UITableViewCell
+
+            print(currentCell.textLabel!.text)
+    }
+    
 }
 
 extension SavedCityTableViewDataSource: UITableViewDataSource {
