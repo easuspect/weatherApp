@@ -45,14 +45,13 @@ extension SavedCityTableViewDataSource {
     }
 }
 
+
 extension SavedCityTableViewDataSource: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let indexPath = tableView.indexPathForSelectedRow //optional, to get from any UIButton for example
+        let currentCell = tableView.cellForRow(at: indexPath)! as! AddLocationTableViewCell
 
-        let currentCell = tableView.cellForRow(at: indexPath!)! as UITableViewCell
-
-            print(currentCell.textLabel!.text)
+        print(currentCell.savedCityLabel.text)
     }
     
 }
@@ -68,8 +67,8 @@ extension SavedCityTableViewDataSource: UITableViewDataSource {
         cell.savedCityDegree.text = rowItem.degree
         cell.savedCityLabel.text = rowItem.cityNameText
         cell.savedWeatherConditionLabel.text = rowItem.weatherStatusText
+      
         return cell
     }
 }
-
 

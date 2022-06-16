@@ -7,10 +7,11 @@
 
 import UIKit
 
-class AddLocationViewController: UIViewController {
-    
+class AddLocationViewController: UIViewController, LocalSearchHelperDelegate {
+  
     var dataSource: SavedCityTableViewDataSource!
     var localSearchHelper = LocalSearchHelper()
+    
     
     @IBOutlet weak var segmentedLabel: UISegmentedControl!
 
@@ -25,17 +26,19 @@ class AddLocationViewController: UIViewController {
         super.viewDidLoad()
      
         dataSource = .init(tableView: tableView, vc: self)
-        localSearchHelper.completion = xxx(results:)
+        localSearchHelper.delegate = self
+        
+   //     localSearchHelper.completion = xxx(results:)
     
         findCityTextField.delegate = self
         findCityTextField.returnKeyType = .search
+
         findCityTextField.addTarget(
             self,
             action: #selector(textFieldDidChange(_:)),
             for: .editingChanged
         )
 
-   
         containerView.backgroundColor = .clear
         containerView.layer.borderWidth = 1
         containerView.layer.borderColor = UIColor.white.cgColor
@@ -46,20 +49,33 @@ class AddLocationViewController: UIViewController {
         segmentedLabel.isHidden = true
     }
     
-    private func xxx(results: [String]) {
+    func didResultCome(results: [String]) {
         
-        print("\(results)")
-        dataSource.setItems(
-            results.map{
-                .init(
-                    weatherStatusText: nil,
-                    cityNameText: $0,
-                    degree: nil
-                )
-            },
-            isSearchActive: true
-        )
+        let tableViewCellModel: [AddLocationTableViewCellViewModel] = results.map{
+                        .init(
+                            weatherStatusText: nil,
+                            cityNameText: $0,
+                            degree: nil
+                        )
+                    }
+        
+                    print("\(results)")
+                    dataSource.setItems(tableViewCellModel,isSearchActive: true)
     }
+    
+  //  private func xxx(results: [String]) {
+        
+//        let tableViewCellModel: [AddLocationTableViewCellViewModel] = results.map{
+//            .init(
+//                weatherStatusText: nil,
+//                cityNameText: $0,
+//                degree: nil
+//            )
+//        }
+//
+//        print("\(results)")
+//        dataSource.setItems(tableViewCellModel,isSearchActive: true)
+//    }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -118,5 +134,4 @@ extension AddLocationViewController {
         localSearchHelper.setSearchText(textField.text ?? "")
     }
 }
-
 
