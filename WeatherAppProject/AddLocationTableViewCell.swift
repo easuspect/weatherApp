@@ -14,6 +14,8 @@ class AddLocationTableViewCell: UITableViewCell {
     @IBOutlet weak var savedCityLabel: UILabel!
     @IBOutlet weak var savedCityDegree: UILabel!
     
+    @IBOutlet weak var checkImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

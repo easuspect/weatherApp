@@ -28,7 +28,7 @@ class AddLocationViewController: UIViewController, LocalSearchHelperDelegate {
         dataSource = .init(tableView: tableView, vc: self)
         localSearchHelper.delegate = self
         
-   //     localSearchHelper.completion = xxx(results:)
+   //   localSearchHelper.completion = xxx(results:)
     
         findCityTextField.delegate = self
         findCityTextField.returnKeyType = .search
@@ -63,7 +63,7 @@ class AddLocationViewController: UIViewController, LocalSearchHelperDelegate {
                     dataSource.setItems(tableViewCellModel,isSearchActive: true)
     }
     
-  //  private func xxx(results: [String]) {
+//  private func xxx(results: [String]) {
         
 //        let tableViewCellModel: [AddLocationTableViewCellViewModel] = results.map{
 //            .init(
@@ -129,7 +129,7 @@ extension AddLocationViewController {
 }
 
 extension AddLocationViewController {
-    
+   
     @objc func textFieldDidChange(_ textField: UITextField) {
         localSearchHelper.setSearchText(textField.text ?? "")
     }

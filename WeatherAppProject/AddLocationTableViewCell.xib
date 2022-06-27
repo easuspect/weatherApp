@@ -71,6 +71,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="checkImageView" destination="Zvu-Ua-cju" id="fyu-Uf-Lbh"/>
                 <outlet property="containerView" destination="hFk-W0-i0d" id="ujf-aq-Mwi"/>
                 <outlet property="savedCityDegree" destination="Fjy-22-rLS" id="dQP-0h-zNP"/>
                 <outlet property="savedCityLabel" destination="anD-EO-zp7" id="nOu-Jv-RgE"/>

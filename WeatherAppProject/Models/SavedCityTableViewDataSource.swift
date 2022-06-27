@@ -52,8 +52,15 @@ extension SavedCityTableViewDataSource: UITableViewDelegate {
         let currentCell = tableView.cellForRow(at: indexPath)! as! AddLocationTableViewCell
 
         print(currentCell.savedCityLabel.text)
+        
+        for (i,element) in items.enumerated().reversed() {
+            items[i].isSelected = false
+        }
+        
+        self.items[indexPath.row].isSelected = true
+        
+        tableView.reloadData()
     }
-    
 }
 
 extension SavedCityTableViewDataSource: UITableViewDataSource {
@@ -67,7 +74,12 @@ extension SavedCityTableViewDataSource: UITableViewDataSource {
         cell.savedCityDegree.text = rowItem.degree
         cell.savedCityLabel.text = rowItem.cityNameText
         cell.savedWeatherConditionLabel.text = rowItem.weatherStatusText
-      
+        if rowItem.isSelected == true {
+            cell.checkImageView.isHidden = false
+        } else {
+            cell.checkImageView.isHidden = true
+        }
+        
         return cell
     }
 }
