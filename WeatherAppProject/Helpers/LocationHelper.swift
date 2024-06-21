@@ -32,7 +32,7 @@ class LocationHelper {
                     {
                         print("reverse geodcode fail: \(error!.localizedDescription)")
                     }
-                    let pm = placemarks! as [CLPlacemark]
+                let pm = placemarks! as [CLPlacemark]
 
                     if pm.count > 0 {
                         let pm = placemarks![0]

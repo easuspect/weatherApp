@@ -26,7 +26,6 @@ class LocalSearchHelper: NSObject {
     override init() {
         super.init()
         
-        
         searchCompleter.resultTypes = .address
         searchCompleter.delegate = self
     }

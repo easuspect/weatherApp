@@ -118,14 +118,16 @@ private extension ViewController {
     
     private func fetchData() {
         showLoadingView()
+        // Makes a request to fetch weather data using
         ApiRequestHandler.request { result in
             self.hideLoadingView()
+            //Switches on the result of the API request. If the request is successful, it stores the fetched data in a property called weatherdata.
             switch result {
             case let .success(data):
                 self.weatherdata = data
                 if let hourlyData = data.hourly {
                     var viewModels: [TimeZoneViewModel] = []
-              
+              //Iterates over the first 24 items in hourlyData
                     for (index, item) in hourlyData.prefix(24).enumerated() {
                         viewModels.append(.init(
                             hour: "\(DateHelper.formatToAmPm(item.dt ?? 0))",
@@ -191,3 +193,5 @@ extension ViewController: CollectionViewDataSourceDelegate {
         }
     }
 }
+
+//This code fetches weather data, processes it into view models, and updates the UI accordingly. It also handles user interactions with the collection view, updating the displayed weather details based on the selected item.

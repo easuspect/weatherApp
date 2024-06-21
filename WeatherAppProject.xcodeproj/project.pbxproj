@@ -100,20 +100,11 @@
 		D70A7BDB27FF638A0014D0DC /* WeatherAppProject */ = {
 			isa = PBXGroup;
 			children = (
+				D73A4B3E2C236F0200BE2B1A /* Views */,
+				D73A4B3D2C236E8300BE2B1A /* ViewModels */,
+				D70A7BFA27FFF3DD0014D0DC /* Models */,
 				D7578F55282577310049ED3F /* Helpers */,
 				D762C507280DEA7800BB1FF4 /* Entities */,
-				D70A7BFA27FFF3DD0014D0DC /* Models */,
-				D70A7BDC27FF638A0014D0DC /* AppDelegate.swift */,
-				D70A7BDE27FF638A0014D0DC /* SceneDelegate.swift */,
-				D7578F5C283763430049ED3F /* AddLocationViewController.swift */,
-				D70A7BE027FF638A0014D0DC /* ViewController.swift */,
-				D762C50E2819C77000BB1FF4 /* OtherDaysTableViewCell.swift */,
-				D762C50F2819C77000BB1FF4 /* OtherDaysTableViewCell.xib */,
-				D70A7BFD27FFFD750014D0DC /* TimeZoneCell.swift */,
-				D70A7BFE27FFFD750014D0DC /* TimeZoneCell.xib */,
-				D7472054284149B700565B3A /* AddLocationTableViewCellViewModel.swift */,
-				D7578F5E283945F20049ED3F /* AddLocationTableViewCell.swift */,
-				D7578F5F283945F20049ED3F /* AddLocationTableViewCell.xib */,
 				D70A7BF327FF7A5D0014D0DC /* Extension */,
 				D70A7BE227FF638A0014D0DC /* Main.storyboard */,
 				D70A7BE827FF638E0014D0DC /* Assets.xcassets */,
@@ -130,6 +121,8 @@
 			children = (
 				D70A7BF427FF7A700014D0DC /* UILabel+Extension.swift */,
 				D762C503280206DE00BB1FF4 /* UIColor+Extension.swift */,
+				D70A7BDC27FF638A0014D0DC /* AppDelegate.swift */,
+				D70A7BDE27FF638A0014D0DC /* SceneDelegate.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -142,6 +135,31 @@
 				D7C413712839514700370752 /* SavedCityTableViewDataSource.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D73A4B3D2C236E8300BE2B1A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D762C5122819CC6900BB1FF4 /* OtherDaysInfoModel.swift */,
+				D762C508280DEA9800BB1FF4 /* TimeZoneViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D73A4B3E2C236F0200BE2B1A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D70A7BE027FF638A0014D0DC /* ViewController.swift */,
+				D7578F5C283763430049ED3F /* AddLocationViewController.swift */,
+				D70A7BFD27FFFD750014D0DC /* TimeZoneCell.swift */,
+				D70A7BFE27FFFD750014D0DC /* TimeZoneCell.xib */,
+				D762C50E2819C77000BB1FF4 /* OtherDaysTableViewCell.swift */,
+				D762C50F2819C77000BB1FF4 /* OtherDaysTableViewCell.xib */,
+				D7578F5E283945F20049ED3F /* AddLocationTableViewCell.swift */,
+				D7578F5F283945F20049ED3F /* AddLocationTableViewCell.xib */,
+				D7472054284149B700565B3A /* AddLocationTableViewCellViewModel.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		D7578F55282577310049ED3F /* Helpers */ = {
@@ -157,8 +175,6 @@
 		D762C507280DEA7800BB1FF4 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				D762C508280DEA9800BB1FF4 /* TimeZoneViewModel.swift */,
-				D762C5122819CC6900BB1FF4 /* OtherDaysInfoModel.swift */,
 				D762C5142821B35600BB1FF4 /* WeatherForecastEntity.swift */,
 				D762C516282203FE00BB1FF4 /* ApiRequestHandler.swift */,
 			);
